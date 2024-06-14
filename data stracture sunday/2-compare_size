@@ -1,0 +1,26 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define a range of input sizes
+n = np.linspace(1, 10000, 1000)  # 1000 points from 1 to 10000
+
+# Compute the functions
+f_n_01 = n**0.1
+f_log_n = np.log(n)
+
+# Plotting the functions
+plt.figure(figsize=(10, 6))
+plt.plot(n, f_n_01, label='$f(n) = n^{0.1}$')
+plt.plot(n, f_log_n, label='$f(n) = \log n$')
+
+# Adding labels and title
+plt.xlabel('n')
+plt.ylabel('f(n)')
+plt.title('Comparison of $f(n) = n^{0.1}$ and $f(n) = \log n$')
+plt.legend()
+plt.grid(True)
+plt.yscale('log')  # Using a log scale to better visualize the comparison
+
+# Show the plot
+plt.tight_layout()
+plt.show()
